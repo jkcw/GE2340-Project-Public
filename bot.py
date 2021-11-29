@@ -196,6 +196,19 @@ def player_round(update: Update) -> None:
                 game.move((i, 1))
                 break
         update.message.reply_text(emoji.emojize(':face_with_rolling_eyes:') + f"You have been chosen to take 1 from heap {i}.")
+        if heaps_empty():
+            button_list = [
+                InlineKeyboardButton(emoji.emojize(':memo:') + " Back to Menu " + emoji.emojize(':memo:'),
+                                     callback_data='/start'),
+                InlineKeyboardButton(emoji.emojize(':trophy:') + " Rankings " + emoji.emojize(':trophy:'),
+                                     callback_data='/rankings_kids.txt')
+            ]
+            reply_markup = InlineKeyboardMarkup(build_menu(button_list, n_cols=1))
+            update.message.reply_text("You lost, NOOB!!!!!" + emoji.emojize(':yawning_face:'),
+                                      reply_markup=reply_markup)
+            global session_start
+            session_start = False
+            return None
         ai_round(update)
 
 
