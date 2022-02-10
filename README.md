@@ -3,7 +3,7 @@ GE2340 project source code without credentials.
 
 # Run the bot.py to start the bot
 
-# Telegram: @jasperwong_ge2340_bot
+# Telegram: @jasperwong_ge2340_bot (Not valid anymore, please clone this repo and run it under the local host.)
 ## If the bot does not respond, the server might be rebooting. Please wait around 2 minutes.
 Reboot Schedule:
 - 00:00
